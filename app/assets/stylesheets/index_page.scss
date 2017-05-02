@@ -1,0 +1,37 @@
+@import 'settings';
+
+.top-bar {
+  color:white;
+  font-family: Arial;
+  // border-bottom: 1px solid black;
+height: 8em;
+background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial
+}
+
+
+.overlay-container .overlay {
+  position: absolute; //css only works with this here
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.menu-icon {
+  height: 6em;
+  width: auto;
+}
+
+.main-icon {
+  height: 50;
+  width: auto;
+}
+
+
+.button {
+  margin: 0;
+  opacity: 2.85;
+  padding-top: 1em;
+}
