@@ -1,11 +1,15 @@
-<!-- <h1 class="index-title">Popular Beers</h1> -->
-<html>
+<h1 class="mybeerguide-title">My Beer Guide</h1>
 
-<% @beers.each do |beer| %>
-  <%= beer.title %>
-<% end %>
 
-</html>
+<div class="beer_list_header">
+  <h2>Beer List:</h2>
+  <div class="beer-list small-9 columns small-centered large-10">
+    <% @beers.each do |beer| %>
+        <p class='animated slideInLeft beer-box'><%= link_to beer.name, beer %></p>
+
+    <% end %>
+  </div>
+</div>
 
 
 

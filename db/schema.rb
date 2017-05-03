@@ -10,13 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501145846) do
+ActiveRecord::Schema.define(version: 20170503220418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beers", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name",        null: false
+    t.string "description", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "rating",     null: false
+    t.integer  "beer_id",    null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beer_id"], name: "index_reviews_on_beer_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  end
+
+  create_table "updowns", force: :cascade do |t|
+    t.integer  "user_id",       null: false
+    t.integer  "beerReview_id", null: false
+    t.boolean  "vote"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["beerReview_id"], name: "index_updowns_on_beerReview_id", using: :btree
+    t.index ["user_id"], name: "index_updowns_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

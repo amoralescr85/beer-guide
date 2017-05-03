@@ -34,6 +34,7 @@ constructor(props) {
         rating: this.state.ratingSelected,
         beer_id: this.props.beerId
       };
+      debugger;
       this.props.addNewReview(formPayload);
       this.handleClearForm(event);
     }

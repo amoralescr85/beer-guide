@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReviewShow from '../components/ReviewBeer';
 import FormContainer from './FormContainer';
-import Notifications, { notify } from 'react-notify-toast';
 
 class ReviewShowContainer extends Component {
   constructor(props) {
@@ -17,17 +16,27 @@ class ReviewShowContainer extends Component {
 
   componentDidMount() {
     let beerId = this.props.params.id;
-    fetch(`/api/v1/beers/${beerId}`, {
-      credentials: 'include',
+    // fetch(`/api/v1/beerreviews/${beerId}`, {
+    //   credentials: 'same-origin',
+    //   method: 'GET'
+    // })
+    //   .then(response => response.json())
+    //   .then(responseData => {
+    //     debugger;
+    //     this.setState({
+    //     //   reviews: [...this.state.beerReviews, ...responseData.beerReviews],
+    //       user: [responseData.user]
+    //      })
+    //   })
+    fetch('/api/v1/users', {
+      credentials: 'same-origin',
       method: 'GET'
     })
-      .then(response => response.json())
-      .then(responseData => {
-        this.setState({
-          reviews: [...this.state.beerReviews, ...responseData.beerReviews],
-          user: [responseData.user]
-        })
-      })
+    .then(response => response.json())
+    .then(responseData => {
+      debugger;
+      this.setState( {user: responseData.user} )
+    });
   }
   addNewReview(payload) {
     fetch('/api/v1/reviews', {
@@ -89,22 +98,13 @@ class ReviewShowContainer extends Component {
       )
     })
 
-    let formShow = this.state.user.map((user, index) => {
-      if (user) {
-        return(
-          <FormContainer
-            key={index}
-            addNewReview={this.addNewReview}
-            beerId={this.props.params.id}
-          />
-        )
-      }
-    })
     return(
       <div className="small-9 small-centered columns main">
-        <Notifications />
         {beerReviews.reverse()}
-        {formShow}
+        <FormContainer
+          addNewReview={this.addNewReview}
+          beerId={this.props.params.id}
+        />
       </div>
     )
   }
