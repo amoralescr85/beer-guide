@@ -1,16 +1,10 @@
 <!-- <h1 class="index-title">Popular Beers</h1> -->
 <html>
 
-<div class="row index-row small-up-2 medium-up-3 large-up-4">
-<%= image_tag("beers.jpeg", class: "main-icon") %>
+<% @beers.each do |beer| %>
+  <%= beer.title %>
+<% end %>
 
-
-<ul class="breadcrumbs">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Features</a></li>
-  <li class="unavailable"><a href="#">Gene Splicing</a></li>
-  <li class="current"><a href="#">Cloning</a></li>
-</ul>
 </html>
 
 

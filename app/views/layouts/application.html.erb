@@ -18,6 +18,12 @@
           <div class="top-bar-title">
             <%= link_to root_path do %>
               <%= image_tag("logo_primary.png", class: "menu-icon") %>
+              <nav class="breadcrumbs">
+            <a href="/beers">Beers /</a>
+            <a href="/styles">Styles /</a>
+            <a href="/breweries">Breweries </a>
+
+            </nav>
             <% end %>
           </div>
           <div class="top-bar-left"></div>
@@ -34,12 +40,16 @@
               <% if current_user && current_user.admin? %>
                 <li><%= link_to 'User Admin', users_path %></li>
               <% end %>
-            
+
+
             </ul>
           </div>
+
+
         </div>
       </div>
     </div>
+
 
 
     <%= yield %>
