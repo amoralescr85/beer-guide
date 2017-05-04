@@ -1,0 +1,46 @@
+<h1 class="mybeerguide-title">My Beer Guide</h1>
+
+
+<div class="beer_list_header">
+  <h2>Beer List:</h2>
+  <div class="beer-list small-9 columns small-centered large-10">
+    <% @beers.each do |beer| %>
+        <p class='animated slideInLeft beer-box'><%= link_to beer.name, beer %></p>
+
+    <% end %>
+  </div>
+</div>
+
+
+
+<!-- <div class="row">
+<div class="columns small-4">Hello world</div> <div class= "small-8">Hola mundo</div>
+</div> -->
+
+<!-- <html>
+  <head>
+  <style>
+  body {
+    background-color: black;
+    font-family:Arial;
+
+
+  }
+  </style>
+</head>
+<body>
+</html>
+
+<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <h1>My Beer Log</h1>
+  </nav>
+</div>
+
+
+<ul class="breadcrumbs">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Beers</a></li>
+  <li class="unavailable"><a href="#">Styles</a></li>
+  <li class="current"><a href="#">Breweries</a></li>
+</ul>

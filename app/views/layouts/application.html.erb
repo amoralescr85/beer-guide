@@ -1,16 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BeerLog</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <div id="app">
+    <div class="top-bar-container" data-sticky-container>
+      <div class="sticky sticky-topbar" data-sticky data-options="marginTop:0;" style="width:100%">
+        <div class="top-bar">
+          <div class="top-bar-title">
+            <%= link_to root_path do %>
+              <%= image_tag("logo_primary.png", class: "menu-icon") %>
+              <nav class="breadcrumbs">
+            <a href="/beers">Beers /</a>
+            <a href="/styles">Styles /</a>
+            <a href="/breweries">Breweries </a>
+
+            </nav>
+            <% end %>
+          </div>
+          <div class="top-bar-left"></div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <% if current_user %>
+                <li class="menu-text"><%= "#{current_user.email}" %></li>
+                <li class="menu-text"><%= link_to "Profile", user_path(current_user) %></li>
+                <li class="menu-text"><%= link_to 'Sign out', destroy_user_session_path, method: "delete" %></li>
+              <% else %>
+                <li><%= link_to 'Create Account', new_user_registration_path, class: "button" %></li>
+                <li><%= link_to 'Sign in', new_user_session_path, class: "button" %></li>
+              <% end %>
+
+
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
     </div>
+
     <%= yield %>
+
   </body>
 </html>

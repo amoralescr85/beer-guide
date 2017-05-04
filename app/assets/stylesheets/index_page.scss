@@ -1,0 +1,51 @@
+@import 'settings';
+
+.top-bar {
+  color:white;
+  font-family: Helvetica;
+  background-color:white;
+
+
+  // border-bottom: 1px solid black;
+height: 6em;
+background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica
+}
+
+
+.overlay-container .overlay {
+  position: absolute; //css only works with this here
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.menu-icon {
+  height: 7em;
+  width: auto;
+}
+
+.main-icon {
+  width: 100%;
+  height: auto;
+}
+
+
+.button {
+  margin: 1;
+  opacity: 2.85;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+// .breadcrumbs {
+//   background-color:white;
+//   font-size: 18px;
+//
+// }
+
+.sticky sticky-topbar {
+  background-color:white;
+}
