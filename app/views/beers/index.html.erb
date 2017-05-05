@@ -1,6 +1,3 @@
-<h1 class="mybeerguide-title">My Beer Guide</h1>
-
-
 <div class="beer_list_header">
   <h2>Beer List:</h2>
   <div class="beer-list small-9 columns small-centered large-10">
@@ -11,6 +8,51 @@
   </div>
 </div>
 
+<div class="submit_beer">
+  <div class="submit_beer-title"><h3>Submit a New Beer</h3></div>
+    <%= form_for [@beer] do |f| %>
+        <% if @beer.errors.present? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@beer.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @beer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :brewery %>
+    <%= f.text_field :brewery %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :style %>
+    <%= f.text_field :style %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :url %>
+    <%= f.text_field :url%>
+  </div>
+
+  <div class='field'>
+    <%= f.submit value="Add this Beer to the List" %>
+  </div>
+</div>
+<% end %>
 
 
 <!-- <div class="row">

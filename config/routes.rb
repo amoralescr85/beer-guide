@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "beers#home"
   resources :users
-  resources :beers, only: [:index, :show] do
+  resources :beers, only: [:index, :create, :show] do
     resources :reviews, only: [:new, :edit, :update]
     resources :favorites, only: [:new, :create]
   end
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
        resources :beers
        resources :reviews
-       resources :users
+       resources :users, only: [:show, :index]
      end
   end
 

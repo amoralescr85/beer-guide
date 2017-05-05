@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-icon {
   width: 100%;
   height: auto;
+
 }
 
 
@@ -48,4 +49,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .sticky sticky-topbar {
   background-color:white;
+}
+
+.beer_list_header {
+  text-align: center;
+}
+
+.submit_beer {
+  color:#C63C22;
+  width: 320px;
+  padding: 20px;
+  border: 5px gray;
+  margin: 3;
+  text-align:center;
+}
+
+.submit_beer-title {
+  text-align: center;
+}
+
+.mybeerguide-title {
+    text-align: center;
+}
+
+.top-bar-container {
+  margin: auto;
+  color: blue;
+}
+
+.small-9 {
+  border: 9px;
 }

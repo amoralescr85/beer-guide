@@ -1,5 +1,9 @@
 class Api::V1::BeersController < ApplicationController
 
+  def index
+    render json: Beer.all
+  end
+
   skip_before_action :verify_authenticity_token, only: [:show]
   def show
     @reviews = []
