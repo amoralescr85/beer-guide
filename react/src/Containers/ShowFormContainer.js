@@ -15,6 +15,7 @@ class ReviewShowContainer extends Component {
   }
 
   componentDidMount() {
+
     let beerId = this.props.params.id;
     // fetch(`/api/v1/beerreviews/${beerId}`, {
     //   credentials: 'same-origin',
@@ -34,9 +35,16 @@ class ReviewShowContainer extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      debugger;
       this.setState( {user: responseData.user} )
     });
+    fetch(`/api/v1/reviews`, {
+      credentials: 'same-origin',
+      method: 'GET'
+    })
+      .then(response => response.json())
+      .then(responseData => {
+        this.setState({ beerReviews: responseData })
+      })
   }
   addNewReview(payload) {
     fetch('/api/v1/reviews', {
@@ -45,11 +53,16 @@ class ReviewShowContainer extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-    .then(response => response.json())
-    .then(responseData => {
-      console.log(responseData.review)
-      this.setState({ beerReviews: [...this.state.beerReviews, responseData.beerReview] })
-    })
+    .then( () => {
+      fetch(`/api/v1/reviews`, {
+        credentials: 'same-origin',
+        method: 'GET'
+      })
+      .then(response => response.json())
+      .then(responseData => {
+        this.setState({ beerReviews: responseData })
+      })
+    });
   }
 
   handleVote(payload){
@@ -77,23 +90,20 @@ class ReviewShowContainer extends Component {
   }
 
   render() {
-    let beerReviews = this.state.beerReviews.map(beerReview => {
-      let reviewers = []
-      beerReview.votes.forEach(vote => {
-        reviewers.push(vote.reviewer)
-      })
 
+    let reviewers = []
+    let beerReviews = this.state.beerReviews.map(beerReview => {
       return(
-        <beerReviewShow
-          id={beerReview.id}
+        <ReviewShow
+          key={beerReview.id}
           body={beerReview.body}
-          key={"beerReview" + beerReview.id}
+          id={beerReview.id}
           rating={beerReview.rating}
           author={beerReview.username}
-          votes={beerReview.votes}
-          handleVote={this.handleVote}
-          thisUser={this.state.user[0]}
-          hasVoted={this.hasUserVoted(reviewers)}
+          /* votes={beerReview.votes} */
+          /* handleVote={this.handleVote} */
+          /* thisUser={this.state.user[0]} */
+          /* hasVoted={this.hasUserVoted(reviewers)} */
          />
       )
     })

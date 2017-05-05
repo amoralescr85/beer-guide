@@ -2,7 +2,7 @@ class Api::V1::ReviewsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:show, :create, :update]
 
   def index
-    render json: Beer.all
+    render json: Review.all
   end
 
   def show

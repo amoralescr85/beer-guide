@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
        resources :beers
        resources :reviews
-       resources :users
+       resources :users, only: [:show, :index]
      end
   end
 
