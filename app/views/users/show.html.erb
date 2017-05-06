@@ -1,1 +1,13 @@
-<h1> Show Page </h1>
+
+<div class="row">
+    <div class="large-12 columns">
+      <div class="row">
+
+        <h3> Favorites</h3>
+            <% @user.beers.each do |favorite| %>
+            <ul>
+              <li>
+                <%= link_to favorite.name, beer_path(favorite) %>
+              </li>
+            </ul>
+            <% end %>

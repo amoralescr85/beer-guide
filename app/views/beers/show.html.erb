@@ -1,20 +1,23 @@
 
 <div class="row">
-    <div class="small-9 columns">
+    <div class="large-12 columns">
+      
       <div class="card">
           <div class="beer-details">
-            <h2><%= @beer.name %></h2>
+            <h4><%= @beer.name %></h4>
             <div class="beer-description">
-              <h4>Description: <%= @beer.description %></h3>
+              <h5>Description: <%= @beer.description %></h5>
             </div>
             <div class="beer-brewery">
-    <h4>Brewery: <%= @beer.brewery %></h4>
+    <h5>Brewery: <%= @beer.brewery %></h5>
     </div>
     <div class="beer-style">
-      <h4>Style: <%= @beer.style %></h4>
+      <h5>Style: <%= @beer.style %></h5>
       </div>
       <div class="beer-url">
-    <h4>Url: <%= @beer.url %></h4>
+    <img src="<%= @beer.url %>" width=150 height=150/>
+
+    <%= link_to "Add to Favorites", beer_favorites_path(@beer, current_user), :method => :post, class: "button success" %>
   </div>
 </div>
 
