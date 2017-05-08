@@ -7,11 +7,15 @@ body.home {
 }
 
 
+
+
 .updown {
-  
+
     margin-right: auto;
     margin-left: auto;
 }
+
+
 
 form {
   position:center;
@@ -19,14 +23,14 @@ form {
 
 .top-bar {
   color:white;
-  font-family: Helvetica;
- border-bottom: 1px solid black;
-height: 6em;
-background-color: black;
+  font-family: Arial;
+  border-bottom: 1px solid black;
+  height: 6em;
+  background-color: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica
+  font-family: Arial
 }
 
 .submit_beer {
@@ -58,11 +62,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1em;
 }
 
-// .breadcrumbs {
-//   background-color:white;
-//   font-size: 18px;
-//
-// }
+.breadcrumbs {
+  background-color:white;
+  font-size: 18px;
+  text-align: center;
+
+}
 
 .sticky sticky-topbar {
   background-color:white;
@@ -83,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .submit_beer-title {
+
   text-align: center;
   display:inline-block;
   color:#C63C22;
@@ -108,4 +114,8 @@ h1, h2, h3, h4, h5, h6 {
 .beer_list_header {
   color:#C63C22;
   text-align: center;
+}
+
+.beer-details {
+  align-content: center;
 }
