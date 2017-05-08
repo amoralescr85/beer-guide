@@ -4,10 +4,16 @@
       <div class="row">
 
         <h3> Favorites</h3>
-            <% @user.beers.each do |favorite| %>
+            <% @favorites.each do |favorite| %>
+
             <ul>
+
               <li>
-                <%= link_to favorite.name, beer_path(favorite) %>
+                <%= link_to favorite.beer.name, beer_path(favorite.beer) %>
+                |<a class="delete"> <img src="<%= favorite.beer.url %>" width=150 height=150/>
+                  <%= link_to "Remove from Fridge", favorite, method: :delete, data: { confirm: "You sure?" } %>
+                </a>
+
               </li>
             </ul>
             <% end %>

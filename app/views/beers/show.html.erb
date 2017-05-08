@@ -18,8 +18,8 @@
       <div class="beer-url">
     <img src="<%= @beer.url %>" width=150 height=150/>
 
-    <%= link_to "Add to Favorites", beer_favorites_path(@beer, current_user), :method => :post, class: "button success" %>
-  </div>
+      <%= link_to "Add to Favorites", beer_favorites_path(@beer, current_user), :method => :post, data: {confirm: "Added to your Fridge!"} %>
+    </div>
 </div>
 
 
