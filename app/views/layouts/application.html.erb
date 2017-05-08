@@ -13,20 +13,22 @@
 
   <body>
     <div class="top-bar-container" data-sticky-container>
-      <div class="sticky sticky-topbar" data-sticky data-options="marginTop:0;" style="width:100%">
+      <!-- <div class="sticky sticky-topbar" data-sticky data-options="marginTop:0;" style="width:100%"> -->
         <div class="top-bar">
           <div class="top-bar-title">
             <%= link_to root_path do %>
               <%= image_tag("logo_primary.png", class: "menu-icon") %>
               <nav class="breadcrumbs">
-            <a href="/beers">Beers /</a>
-            <a href="/styles">Styles /</a>
-            <a href="/breweries">Breweries </a>
+            <a href="/beers">List of Beers •</a>
+            <a href="/user_path"> My Fridge </a>
+
 
             </nav>
             <% end %>
           </div>
           <div class="top-bar-left"></div>
+          <ul class="menu">
+
           <div class="top-bar-right">
             <ul class="menu">
               <% if current_user %>

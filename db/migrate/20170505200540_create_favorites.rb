@@ -3,7 +3,7 @@ class CreateFavorites < ActiveRecord::Migration[5.0]
     create_table :favorites do |t|
       t.boolean :add_favorite, default:false
 
-      t.belongs_to :user 
+      t.belongs_to :user
       t.belongs_to :beer
 
 

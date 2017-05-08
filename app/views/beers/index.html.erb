@@ -1,15 +1,13 @@
-<div class="beer_list_header">
-  <h2>Beer List:</h2>
-  <div class="beer-list small-9 columns small-centered large-10">
-    <% @beers.each do |beer| %>
-        <p class='animated slideInLeft beer-box'><%= link_to beer.name, beer %></p>
+<div class="row" >
 
-    <% end %>
-  </div>
-</div>
 
-<div class="submit_beer">
-  <div class="submit_beer-title"><h3>Submit a New Beer</h3></div>
+  <div class="row">
+      <div class="large-12 columns">
+          <div class="row">
+
+        <div class="card">
+<div class="submit_beer-title">
+  <h3>Submit a New Beer</h3></div>
     <%= form_for [@beer] do |f| %>
         <% if @beer.errors.present? %>
     <div id="error_explanation">
@@ -52,11 +50,30 @@
     <%= f.submit value="Add this Beer to the List" %>
   </div>
 </div>
+
 <% end %>
+
+
+
+<div class="card">
+<div class="large-12 columns">
+  <div class="beer_list_header">
+    <h3>List of Reviewed Beers</h3>
+  <% @beers.each do |beer| %>
+  <a href="beers/<%=beer.id%>"><img src="<%=beer.url%>" width=150 height=150 %></a></p>
+
+  <% end %>
+</div>
+</div>
+
+
 
 
 <!-- <div class="row">
 <div class="columns small-4">Hello world</div> <div class= "small-8">Hola mundo</div>
+
+<%= link_to beer.name, beer
+
 </div> -->
 
 <!-- <html>
