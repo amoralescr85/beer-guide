@@ -2,10 +2,12 @@
 <div class="row">
     <div class="large-12 columns">
 
-
+<div>
+  <h3 class="beer"> Beer Details </h3>
+</div>
           <div class="beer-details">
-                <div class="card">
-            <h3><%= @beer.name %></h3>
+                <div class="carta">
+            <div class ="beername"> <h4><%= @beer.name %></h4> </div>
             <div class="beer-description">
               <h5>Description: <%= @beer.description %></h5>
             </div>
@@ -25,4 +27,8 @@
 
 </div>
 
-<div id="react" data-currentuser='<%= current_user.to_json %>' />
+<div>
+  <h3 class="review"> Reviews </h3>
+    <div id="react" data-currentuser='<%= current_user.to_json %>'>
+  </div>
+</div>

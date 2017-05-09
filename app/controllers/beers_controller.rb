@@ -6,6 +6,11 @@ class BeersController < ApplicationController
     @beer = Beer.new
   end
 
+    def new
+
+      beer = Beer.new
+    end
+
   def create
     @beer = Beer.new(beer_params)
     if @beer.save
@@ -23,7 +28,7 @@ class BeersController < ApplicationController
   def destroy
     Beer.find(params[:id])
   end
-  
+
   private
 
   def beer_params

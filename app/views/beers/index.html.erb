@@ -3,11 +3,12 @@
 
   <div class="row">
       <div class="large-12 columns">
+        <div class="submit_beer-title">
+          <h3>Submit a New Beer</h3></div>
           <div class="row">
 
         <div class="card">
-<div class="submit_beer-title">
-  <h3>Submit a New Beer</h3></div>
+
     <%= form_for [@beer] do |f| %>
         <% if @beer.errors.present? %>
     <div id="error_explanation">
@@ -54,11 +55,11 @@
 <% end %>
 
 
-
-<div class="card">
+<div class="beer_list_header">
+  <h3>List of Reviewed Beers</h3>
+<div class="cartota">
 <div class="large-12 columns">
-  <div class="beer_list_header">
-    <h3>List of Reviewed Beers</h3>
+
   <% @beers.each do |beer| %>
   <a href="beers/<%=beer.id%>"><img src="<%=beer.url%>" width=150 height=150 %></a></p>
 

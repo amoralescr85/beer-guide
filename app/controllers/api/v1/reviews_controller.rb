@@ -6,10 +6,7 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def show
-    payload = {
-      beer: Beer.find(params[:id])
-    }
-    render json: payload
+    render json: Beer.find(params[:id]).reviews
   end
 
   def create
