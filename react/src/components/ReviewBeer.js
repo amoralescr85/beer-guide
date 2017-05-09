@@ -45,8 +45,8 @@ const ReviewShow = (props) => {
   */
 
   return(
-    <div /* className={hasVoted+ " review-beer-show " + "review-beer-show animated zoomInDown"} */>
-      <p className="review-body">{props.body}</p>
+    <div id="prueba">
+      <p className="review-body"> {props.body}</p>
       <p className="review-rating">{props.rating} stars rating</p>
       <p className="review-author">By: {props.author}</p>
       {/* <span className="upvote" onClick={onUpClick}>

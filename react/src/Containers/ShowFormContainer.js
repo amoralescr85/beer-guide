@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReviewShow from '../components/ReviewBeer';
 import FormContainer from './FormContainer';
 
-class ReviewShowContainer extends Component {
+class ShowFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,15 +29,15 @@ class ReviewShowContainer extends Component {
     //       user: [responseData.user]
     //      })
     //   })
-    fetch('/api/v1/users', {
-      credentials: 'same-origin',
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(responseData => {
-      this.setState( {user: responseData.user} )
-    });
-    fetch(`/api/v1/reviews`, {
+    // fetch('/api/v1/users', {
+    //   credentials: 'same-origin',
+    //   method: 'GET'
+    // })
+    // .then(response => response.json())
+    // .then(responseData => {
+    //   this.setState( {user: responseData.user} )
+    // });
+    fetch(`/api/v1/reviews/${beerId}`, {
       credentials: 'same-origin',
       method: 'GET'
     })
@@ -47,14 +47,15 @@ class ReviewShowContainer extends Component {
       })
   }
   addNewReview(payload) {
-    fetch('/api/v1/reviews', {
+    let beerId = this.props.params.id;
+    fetch(`/api/v1/reviews/`, {
       credentials: 'same-origin',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
     .then( () => {
-      fetch(`/api/v1/reviews`, {
+      fetch(`/api/v1/reviews/${beerId}`, {
         credentials: 'same-origin',
         method: 'GET'
       })
@@ -66,6 +67,7 @@ class ReviewShowContainer extends Component {
   }
 
   handleVote(payload){
+
     fetch(`/api/v1/beerReviews/${payload.id}`, {
       credentials: 'include',
       method: 'PATCH',
@@ -100,24 +102,24 @@ class ReviewShowContainer extends Component {
           id={beerReview.id}
           rating={beerReview.rating}
           author={beerReview.username}
-          /* votes={beerReview.votes} */
-          /* handleVote={this.handleVote} */
-          /* thisUser={this.state.user[0]} */
-          /* hasVoted={this.hasUserVoted(reviewers)} */
+
          />
       )
     })
 
     return(
       <div className="small-9 small-centered columns main">
-        {beerReviews.reverse()}
+
+        {beerReviews}
+
         <FormContainer
           addNewReview={this.addNewReview}
           beerId={this.props.params.id}
         />
+
       </div>
     )
   }
 }
 
-export default ReviewShowContainer;
+export default ShowFormContainer;
