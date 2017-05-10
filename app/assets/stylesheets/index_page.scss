@@ -1,6 +1,14 @@
 @import 'settings';
 
 
+.madera {
+  background-image: url("wooden.jpg");
+}
+
+.fridgetitle {
+  text-align: center;
+  font-weight: bold;
+}
 
 .prueba {
   color:#C63C22;
@@ -23,19 +31,21 @@ body.home {
   font-size: 16px;
   border-bottom-width: 1px;
   padding: 15px;
+  background-color: white;
 }
 
 .review {
-    color:#C63C22;
+    color:#000000;
     text-align: center;
     font-weight: bold;
+    
 
 
 }
 
 .beer {
 
-      color:#C63C22;
+      color:#000000;
       text-align: center;
       font-weight: bold;
 
@@ -126,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 .submit_beer-title {
   font-weight: bold;
   text-align: center;
-  color:#C63C22;
+  color:#000000;
 
 }
 
@@ -166,10 +176,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cartota {
+  background-color: white;
   text-align:center;
   border-style:solid;
   border-width:0.5px;
-  column-count: 2;
+  column-count: 5;
   position:center;
   color:black;
   font-size: 16px;
@@ -180,12 +191,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .beer_list_header {
-  color:#C63C22;
+  color:#000000;
   text-align: center;
 }
 
 .beer-details {
   align-content: center;
+  background-color: white;
 }
 
 .card {

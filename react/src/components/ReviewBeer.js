@@ -48,7 +48,6 @@ const ReviewShow = (props) => {
     <div id="prueba">
       <p className="review-body"> {props.body}</p>
       <p className="review-rating">{props.rating} stars rating</p>
-      <p className="review-author">By: {props.author}</p>
       {/* <span className="upvote" onClick={onUpClick}>
         ⬆{upCount()}
       </span>

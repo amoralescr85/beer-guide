@@ -20,7 +20,10 @@
               <%= image_tag("logo_primary.png", class: "menu-icon") %>
               <nav class="breadcrumbs">
             <a href="/beers">List of Beers •</a>
-            <a href="/user_path"> My Fridge </a>
+            <% if current_user %>
+            <a href="/users/<%= current_user.id %>"> My Fridge </a>
+            <% end %>
+
 
 
             </nav>
