@@ -10,6 +10,7 @@ class Api::V1::BeersController < ApplicationController
       review_to_send[:id] = review.id
       review_to_send[:body] = review.body
       review_to_send[:rating] = review.rating
+    end
 
     #   updowns = []
     #   review.updowns.each do |updown|
