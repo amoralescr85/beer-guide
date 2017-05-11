@@ -1,8 +1,8 @@
 @import 'settings';
 
 
-.madera {
-  background-image: url("wooden.jpg");
+.forms {
+  text-align: center;
 }
 
 .fridgetitle {
@@ -38,7 +38,7 @@ body.home {
     color:#000000;
     text-align: center;
     font-weight: bold;
-    
+
 
 
 }
@@ -56,7 +56,7 @@ body.home {
 }
 
 .updown {
-
+    background-color: white;
     margin-right: auto;
     margin-left: auto;
 }
@@ -109,7 +109,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breadcrumbs {
-  background-color:white;
   font-size: 18px;
   text-align: center;
 

@@ -1,25 +1,17 @@
-<div class= "madera">
 <div class="row">
-    <div class="large-12 columns">
-
-
-      <div class="fridgetitle"><h3> My Fridge</h3>
+  <div class="large-12 columns">
+    <div class="fridgetitle">
+      <h3> My Fridge</h3>
       <div class="card">
-            <% @favorites.each do |favorite| %>
-
-
-
-              <li>
-                <%= link_to favorite.beer.name, beer_path(favorite.beer) %>
-                |<a class="delete"> <img src="<%= favorite.beer.url %>" width=150 height=150/>
-                  <%= link_to "Remove from Fridge", favorite, method: :delete, data: { confirm: "You sure?" } %>
-                </a>
-                <div class= "madera">
-
-              </li>
-
-            <% end %>
-            <div class= "madera">
-          </div>
-        </div>
+        <% @favorites.each do |favorite| %>
+          <li>
+            <%= link_to favorite.beer.name, beer_path(favorite.beer) %>
+            |<a class="delete"> <img src="<%= favorite.beer.url %>" width=150 height=150/>
+              <%= link_to "Remove from Fridge", favorite, method: :delete, data: { confirm: "You sure?" } %>
+            </a>
+          </li>
+        <% end %>
       </div>
+    </div>
+  </div>
+</div>
