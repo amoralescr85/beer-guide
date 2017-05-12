@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Beer.create!(id: 7, name: 'Imperial', description: 'Costa Rican Beer', brewery: 'Florida Ice Farm', style: 'Lager', url: 'http://www.lovemarks.com/wp-content/uploads/lovemark-imperial-beer-standard-600x600.jpg')

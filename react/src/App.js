@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute, Router, browserHistory } from 'react-router';
-import ShowFormContainer from './containers/ShowFormContainer';
+import ShowFormContainer from './Containers/ShowFormContainer';
 
 const App = (props) => {
   return (

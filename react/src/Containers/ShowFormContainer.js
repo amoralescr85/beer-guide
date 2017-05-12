@@ -17,26 +17,7 @@ class ShowFormContainer extends Component {
   componentDidMount() {
 
     let beerId = this.props.params.id;
-    // fetch(`/api/v1/beerreviews/${beerId}`, {
-    //   credentials: 'same-origin',
-    //   method: 'GET'
-    // })
-    //   .then(response => response.json())
-    //   .then(responseData => {
-    //     debugger;
-    //     this.setState({
-    //     //   reviews: [...this.state.beerReviews, ...responseData.beerReviews],
-    //       user: [responseData.user]
-    //      })
-    //   })
-    // fetch('/api/v1/users', {
-    //   credentials: 'same-origin',
-    //   method: 'GET'
-    // })
-    // .then(response => response.json())
-    // .then(responseData => {
-    //   this.setState( {user: responseData.user} )
-    // });
+
     fetch(`/api/v1/reviews/${beerId}`, {
       credentials: 'same-origin',
       method: 'GET'
@@ -109,13 +90,16 @@ class ShowFormContainer extends Component {
 
     return(
       <div className="small-9 small-centered columns main">
-
+        <div>
         {beerReviews}
+        </div>
 
+        <div>
         <FormContainer
           addNewReview={this.addNewReview}
           beerId={this.props.params.id}
         />
+        </div>
 
       </div>
     )
