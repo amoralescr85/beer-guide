@@ -2,6 +2,16 @@
 
 This app was built in order to solve a small problem I face in real life. I learned how to brew beer a few years ago and love trying out and discovering beers from all around the world; however, I often have a hard time remembering which beers I've actually tried and if I liked them or not. My Beer Guide is now my go to app in order to organize and keep track of the beers that I've tried and those I'm about to discover.
 
+
+
+### To run this app on your local machine:
+
+* `git clone https://github.com/amoralescr85/beer-guide`
+* `bundle`
+* `npm install`
+* `rails s`
+* `npm start`
+
 [My Beer Guide](https://mybeerlog.herokuapp.com)
 
 ![Build Status](https://codeship.com/projects/74c6e5d0-0f50-0135-cdbc-5e0a062e789d/status?branch=master)
